@@ -1,6 +1,6 @@
 # test_app.py
 import unittest
-from app import soma, subtrai, multiplica, divide, saudacao
+from meu_app import soma, subtrai, multiplica, divide, saudacao
 
 class TestApp(unittest.TestCase):
 
