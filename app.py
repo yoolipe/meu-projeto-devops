@@ -1,16 +1,18 @@
-from flask import Flask
+# app.py
 
-app = Flask(__name__)
+def soma(a, b):
+    return a + b
 
-@app.route('/')
-def home():
-    return "Aplicacao rodando no Docker! TESTE"
+def subtrai(a, b):
+    return a - b
 
-@app.route('/hello')
-def hello():
-    return "Hello, World!"
+def multiplica(a, b):
+    return a * b
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+def divide(a, b):
+    if b == 0:
+        raise ZeroDivisionError("Não pode dividir por zero")
+    return a / b
 
-print("Disparando PR para GitHub Actions")
+def saudacao(nome):
+    return f"Olá, {nome}!"
