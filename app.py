@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Aplicacao rodando no Docker! teste PR"
+    return "Aplicacao rodando no Docker! TESTEEEEEEE"
 
 @app.route('/hello')
 def hello():
