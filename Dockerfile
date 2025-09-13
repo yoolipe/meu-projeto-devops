@@ -14,7 +14,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Instala as dependências
-RUN pip install --no-cache-dir -r 
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Estágio 2: Final
 # Imagem final, leve e otimizada para produção
