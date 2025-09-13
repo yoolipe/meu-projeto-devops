@@ -1,30 +1,24 @@
 import unittest
-from app import app
+from app import soma, subtrai, multiplica, divide, saudacao
 
 class TestApp(unittest.TestCase):
 
-    def setUp(self):
-        self.client = app.test_client()
+    def test_soma(self):
+        self.assertEqual(soma(2, 3), 5)
 
-    def test_home_status_code(self):
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)
+    def test_subtrai(self):
+        self.assertEqual(subtrai(5, 3), 2)
 
-    def test_home_content(self):
-        response = self.client.get('/')
-        self.assertIn(b'Aplicacao rodando no Docker', response.data)
+    def test_multiplica(self):
+        self.assertEqual(multiplica(4, 3), 12)
 
-    def test_hello_status_code(self):
-        response = self.client.get('/hello')
-        self.assertEqual(response.status_code, 200)
+    def test_divide(self):
+        self.assertEqual(divide(10, 2), 5)
+        with self.assertRaises(ZeroDivisionError):
+            divide(10, 0)
 
-    def test_hello_content(self):
-        response = self.client.get('/hello')
-        self.assertIn(b'Hello, World!', response.data)
+    def test_saudacao(self):
+        self.assertEqual(saudacao("Lipe"), "Olá, Lipe!")
 
-    def test_route_not_found(self):
-        response = self.client.get('/nao-existe')
-        self.assertEqual(response.status_code, 404)
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
